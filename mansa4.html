@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Online Course Website</title>
+    <link rel="stylesheet" href="rakhi.css">
+</head>
+<body>
+    <header>
+        <h1>Online Course</h1>
+        <nav>
+            <ul>
+                <li><a href="rakhi1.html">Home</a></li>
+                <li><a href="rakhi2.html">About Us</a></li>
+                <li><a href="rakhi3.html">Course Information</a></li>
+                <li><a href="rakhi4.html">Register</a></li>
+                <li><a href="rakhi5.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Register for a Course</h1>
+        <form id="registration-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="">Select a course</option>
+                <option value="course1">Course 1 - Introduction to Programming</option>
+                <option value="course2">Course 2 - Web Development</option>
+                <option value="course3">Course 3 - Data Science</option>
+            </select>
+            
+            <input type="submit" value="Register">
+        </form>
+        <div id="success-message">Registration Successful!</div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Course Website</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("registration-form");
+            const successMessage = document.getElementById("success-message");
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                if (form.checkValidity()) {
+                    successMessage.style.display = "block";
+                    form.reset();
+                } else {
+                    form.reportValidity();
+                }
+            });
+        });
+    </script>
+</html>
